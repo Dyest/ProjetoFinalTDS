@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width-devide-width" />
+    <meta charset="utf-8" lang="pt-br"/>
+    <title>FoodDrop :: Área Administrativa</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+<body>
+    <header class="bg-dark">
+        <div class="container">
+            <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+                <a class="navbar-brand" asp-page="/Index">FoodDrop</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-item nav-link" asp-area="" asp-page="/Produto/Listar">Produtos</a>
+                        <a class="nav-item nav-link" asp-area="" asp-page="/Cliente/Listar">Clientes</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <section class="container" style="padding-bottom:72px;">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </section>
+    <footer class="footer bg-light text-center border-top text-muted fixed-bottom p-4">
+        <div class="container">
+            <div class="row">
+                <div class=" col">
+                    FoodDrop &copy; 2023 - Todos os direitos reservados <a asp-area="" asp-page="/Privacy">Privacy</a>
+                </div>
+                <div class="col">
+                    <a asp-area="" asp-page="/Admin">Administrar</a>
+                </div>
+
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer src="https://friconix.com/cdn/friconix.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+
+</html>
